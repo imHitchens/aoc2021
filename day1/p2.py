@@ -34,8 +34,8 @@ Consider sums of a three-measurement sliding window. How many sums are larger th
 import os
 
 with open(os.path.join(os.path.dirname(os.path.realpath('__file__')),'data.txt'), 'r') as depthData:
-    depthList = []
     numElements = 3
+    depthList = []
     count = 0
     for line in depthData:
         if not line: #Break when no data lines left
