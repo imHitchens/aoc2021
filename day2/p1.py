@@ -31,15 +31,16 @@ Calculate the horizontal position and depth you would have after following the p
 import os
 
 with open(os.path.join(os.path.dirname(os.path.realpath('__file__')),'input.txt'), 'r') as input:
-    numElements = 3
     directions = ['forward','down','up']
-    command = []
     location = [0,0,0]
     for line in input:
         if not line: #Break when no data lines left
+
             break
         command = line.split()
         location[directions.index(command[0])] += int(command[1])
-        print(location)
 
-print('Forward: ',location[0],'Depth: ', location[1] - location[2], 'Multiplied: ', location[0]*(location[1] - location[2]))
+position = location[0]
+depth = location[1] - location[2]
+
+print('Position: ', position,'Depth: ', depth, 'Multiplied: ', position*depth)
